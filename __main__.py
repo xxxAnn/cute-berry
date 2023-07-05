@@ -8,7 +8,7 @@ USERID = 331431342438875137
 def main():
     cute_berry = CuteBerry(HOST, PORT)
 
-    print(cute_berry.available_recipes(USERID))
+    print(cute_berry.get_user(USERID))
 
 if __name__ == "__main__":
     main()

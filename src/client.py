@@ -18,21 +18,16 @@ class CuteBerry:
         return str(data, "UTF-8")
 
     def _request(self, code: int, *data: list[str]) -> str:
-        bts = BerryModel.__generate_bytes(code, list(data))
-        return self.__request(bts)
-    
+        return self.__request(BerryModel.__generate_bytes(code, list(data)))
     #//
     
     def get_user(self, userid: int) -> User:
-        return User(self.__request(BerryModel.get_user(str(userid))).splitlines())
+        return BerryModel.get_user(self.__request, str(userid))
     
     def available_recipes(self, userid: int) -> list[(int, int)]:
-        data = self.__request(BerryModel.available_recipes(str(userid))).splitlines()
+        data = BerryModel.available_recipes(self.__request, str(userid))
 
-        if int(data[1]) == 0:
-            return []
-        else:
-            return [(int(ind.split(':')[0]), int(ind.split(':')[1])) for ind in data[2:]]
+        return [(int(ind.split(':')[0]), int(ind.split(':')[1])) for ind in data[2:]]
     
     #// 
 
