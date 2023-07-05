@@ -13,3 +13,10 @@ class BerryModel:
         ]
         return BerryModel.__generate_bytes(code, data)
     
+    @staticmethod
+    def available_recipes(user_id):
+        code = 4
+        data = [
+            user_id
+        ]
+        return BerryModel.__generate_bytes(code, data)
