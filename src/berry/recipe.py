@@ -1,4 +1,4 @@
-from .base import Berry
+from src.berry.base import Berry
 
 class Recipe(Berry):
     

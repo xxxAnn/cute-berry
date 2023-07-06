@@ -1,1 +1,1 @@
-from .client import CuteBerry
+from src.main import main

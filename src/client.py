@@ -1,7 +1,7 @@
 import socket
 
-from .model import BerryModel
-from .berry import User, Recipe
+from src.model import BerryModel
+from src.berry import User, Recipe
 
 class CuteBerry:
 
@@ -25,9 +25,10 @@ class CuteBerry:
         return BerryModel.get_user(self.__request, str(userid))
     
     def available_recipes(self, userid: int) -> list[(int, int)]:
-        data = BerryModel.available_recipes(self.__request, str(userid))
-
-        return [(int(ind.split(':')[0]), int(ind.split(':')[1])) for ind in data[2:]]
+        return BerryModel.available_recipes(self.__request, str(userid))
+    
+    def get_recipe(self, recipeid: int) -> Recipe:
+        return BerryModel.get_recipe(self.__request, str(recipeid))
     
     #// 
 

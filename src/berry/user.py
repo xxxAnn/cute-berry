@@ -1,4 +1,4 @@
-from .base import Berry
+from src.berry.base import Berry
 
 class User(Berry):
 
@@ -7,8 +7,17 @@ class User(Berry):
         self.balance = int(data[2])
         coords = data[3].split(',')
         self.coords = (int(coords[0]), int(coords[1]))
-        self.energy = data[4]
+        self.energy = int(data[4])
         self.__generate_inventory(data[1])
+
+    def _pairs(self):
+        return [
+            ("ID", self.id),
+            ("Balance", self.balance),
+            ("Coords", self.coords),
+            ("Energy", self.energy),
+            ("Inventory", self.inventory)
+        ]
 
     def __generate_inventory(self, data: str):
 
@@ -17,11 +26,5 @@ class User(Berry):
     def __str__(self) -> str:
         return self._repr(
             "User",
-            [
-                ("ID", self.id),
-                ("Balance", self.balance),
-                ("Coords", self.coords),
-                ("Energy", self.energy),
-                ("Inventory", self.inventory)
-            ]
+            self._pairs()
         )
