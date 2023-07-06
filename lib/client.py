@@ -1,7 +1,7 @@
 import socket
 
-from src.model import BerryModel
-from src.berry import User, Recipe
+from lib.model import BerryModel
+from lib.berry import User, Recipe
 
 class CuteBerry:
 

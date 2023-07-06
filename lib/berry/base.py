@@ -1,4 +1,4 @@
-from src.model.parser import BerryParser
+from lib.model.parser import BerryParser
 
 class Berry:
     

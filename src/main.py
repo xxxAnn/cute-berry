@@ -1,4 +1,4 @@
-from src.client import CuteBerry
+from lib.client import CuteBerry
 
 HOST = "127.0.0.1"
 PORT = 7878  

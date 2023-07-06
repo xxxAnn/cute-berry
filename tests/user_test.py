@@ -1,4 +1,4 @@
-from src.berry.user import User
+from lib.berry.user import User
 
 import unittest
 
@@ -19,9 +19,5 @@ class TestUser(unittest.TestCase):
                 ("Coords", (3, 4)),
                 ("Energy", 30),
                 ("Inventory", {1:100})
-            ]
+            ],
         )
-
-
-if __name__ == '__main__':
-    unittest.main()

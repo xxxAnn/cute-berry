@@ -1,8 +1,8 @@
 from typing import Callable, TypeAlias
 
-from src.berry import User, Recipe
-from src.model.parser import BerryParser as BP
-from src.model.error import BerryError
+from lib.berry import User, Recipe
+from lib.model.parser import BerryParser as BP
+from lib.model.error import BerryError
 
 Requester: TypeAlias = Callable[[str], str]
 Bytifier: TypeAlias = Callable[[int, list[str]], bytes]
