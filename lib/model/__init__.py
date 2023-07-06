@@ -28,9 +28,9 @@ class BerryModel:
             return converter(res)
     
     @staticmethod
-    def get_user(f: Requester, user_id):
+    def get_user(f: Requester, *data):
         return BerryModel.__call(
-            [user_id],
+            list(data),
             BerryModel.GET_USER,
             f,
             User
@@ -38,18 +38,18 @@ class BerryModel:
     
     
     @staticmethod
-    def available_recipes(f: Requester, user_id):
+    def available_recipes(f: Requester, *data):
         return BerryModel.__call(
-            [user_id],
+            list(data),
             BerryModel.AVAILABLE_RECIPES,
             f,
             lambda res: [((x := BP.num_pair(ind))[0], x[1]) for ind in res[2:]]
         )
     
     @staticmethod
-    def get_recipe(f: Requester, recipe_id):
+    def get_recipe(f: Requester, *data):
         return BerryModel.__call(
-            [recipe_id],
+            list(data),
             BerryModel.GET_RECIPE,
             f,
             lambda res: Recipe(res[1])
