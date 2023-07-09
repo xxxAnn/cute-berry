@@ -1,7 +1,7 @@
 from lib.client import CuteBerry
 
-HOST = "127.0.0.1"
-PORT = 8080  
+HOST = "//"
+PORT = 80
 USERID = 331431342438875137
         
 
