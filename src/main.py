@@ -1,6 +1,7 @@
+import sys
 from lib.client import CuteBerry
 
-HOST = "//"
+HOST = sys.argv[1]
 PORT = 80
 USERID = 331431342438875137
         
